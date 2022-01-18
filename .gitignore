@@ -1,0 +1,7 @@
+/obj/
+/bin/
+/.vs/
+
+/.vscode/settings.json
+
+thunderstore-package.zip

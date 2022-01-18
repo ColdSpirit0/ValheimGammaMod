@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31911.196
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GammaMod", "GammaMod.csproj", "{30031642-0735-49BA-B05D-18540A5F740D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30031642-0735-49BA-B05D-18540A5F740D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30031642-0735-49BA-B05D-18540A5F740D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30031642-0735-49BA-B05D-18540A5F740D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30031642-0735-49BA-B05D-18540A5F740D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {58646B1C-7A75-41FD-B03D-C26C191E1A34}
+	EndGlobalSection
+EndGlobal

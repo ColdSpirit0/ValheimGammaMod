@@ -1,0 +1,9 @@
+{
+    "name": "ValheimGammaMod",
+    "description": "Makes the game brighter in caves and at night.",
+    "version_number": "1.0.0",
+    "dependencies": [
+        "denikson-BepInExPack_Valheim-5.4.1700"
+    ],
+    "website_url": "https://github.com/ColdSpirit0/ValheimGammaMod"
+}

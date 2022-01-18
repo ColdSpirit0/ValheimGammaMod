@@ -1,0 +1,98 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+
+        /* THUNDERSTORE PACKAGE */
+        {
+            "label": "Thunderstore make package",
+            "type": "shell",
+            "command": "./thunderstore-make-package.ps1",
+            "group": "build",
+            "dependsOrder": "sequence",
+            "dependsOn": ["Build release"]
+        },
+
+
+        /* DEBUG */
+        {
+            "label": "Build & Deploy [DEBUG]",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": ["Build debug", "Deploy debug"],
+            "group": "build",
+        },
+        {
+            "label": "Build debug",
+            "type": "shell",
+            "command": "msbuild",
+            "args": [
+                // Ask msbuild to generate full paths for file names.
+                "/property:GenerateFullPaths=true",
+                "/t:build",
+                // Do not generate summary otherwise it leads to duplicate errors in Problems panel
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "presentation": {
+                // Reveal the output only if unrecognized errors occur.
+                "reveal": "silent"
+            },
+            // Use the standard MS compiler pattern to detect errors, warnings and infos
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Deploy debug",
+            "type": "shell",
+            "command": "cp",
+            "args": [
+                "./bin/Debug/GammaMod.dll",
+                "${config:PLUGINS_DIR}"
+            ],
+            "presentation": {
+                "reveal": "silent",
+            }
+        },
+
+
+        /* RELEASE */
+        {
+            "label": "Build & Deploy [RELEASE]",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": ["Build release", "Deploy release"],
+            "group": "build",
+        },
+        {
+            "label": "Build release",
+            "type": "shell",
+            "command": "msbuild",
+            "args": [
+                // Ask msbuild to generate full paths for file names.
+                "/property:GenerateFullPaths=true",
+                "/t:build",
+                "/p:Configuration=Release",
+                // Do not generate summary otherwise it leads to duplicate errors in Problems panel
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "presentation": {
+                // Reveal the output only if unrecognized errors occur.
+                "reveal": "silent"
+            },
+            // Use the standard MS compiler pattern to detect errors, warnings and infos
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Deploy release",
+            "type": "shell",
+            "command": "cp",
+            "args": [
+                "./bin/Release/GammaMod.dll",
+                "${config:PLUGINS_DIR}"
+            ],
+            "presentation": {
+                "reveal": "silent",
+            }
+        },
+    ]
+}
